@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { PortfolioData, ThemeType } from './types';
 import ThemeRetroOS from './components/ThemeRetroOS';
@@ -15,11 +16,12 @@ import ThemeTradingCard from './components/ThemeTradingCard';
 import ThemeInstruction from './components/ThemeInstruction';
 import ThemeTopSecret from './components/ThemeTopSecret';
 import ThemeVending from './components/ThemeVending';
+import ThemeSelfCheckout from './components/ThemeSelfCheckout';
 
 import { 
   Monitor, Square, Sparkles, Gamepad2, ReceiptText, 
   AlertTriangle, Utensils, Skull, Code2, Map, Disc, 
-  CreditCard, PenTool, FileLock, Store
+  CreditCard, PenTool, FileLock, Store, ScanBarcode
 } from 'lucide-react';
 
 // Pre-defined data for an Engineer Persona
@@ -73,6 +75,7 @@ const App: React.FC = () => {
     { type: ThemeType.INSTRUCTION, icon: PenTool, label: "Manual", color: "bg-black" },
     { type: ThemeType.TOP_SECRET, icon: FileLock, label: "Secret", color: "bg-red-800" },
     { type: ThemeType.VENDING, icon: Store, label: "Vending", color: "bg-red-500" },
+    { type: ThemeType.SELF_CHECKOUT, icon: ScanBarcode, label: "Checkout", color: "bg-teal-600" },
   ];
 
   return (
@@ -93,6 +96,7 @@ const App: React.FC = () => {
       {currentTheme === ThemeType.INSTRUCTION && <ThemeInstruction data={data} />}
       {currentTheme === ThemeType.TOP_SECRET && <ThemeTopSecret data={data} />}
       {currentTheme === ThemeType.VENDING && <ThemeVending data={data} />}
+      {currentTheme === ThemeType.SELF_CHECKOUT && <ThemeSelfCheckout data={data} />}
 
       {/* Theme Switcher (Horizontal Scroll Dock) */}
       <div className="fixed bottom-6 left-0 right-0 z-[9999] flex justify-center pointer-events-none">

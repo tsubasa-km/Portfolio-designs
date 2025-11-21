@@ -1,3 +1,4 @@
+
 export interface Project {
   title: string;
   description: string;
@@ -29,4 +30,5 @@ export enum ThemeType {
   INSTRUCTION = 'INSTRUCTION',
   TOP_SECRET = 'TOP_SECRET',
   VENDING = 'VENDING',
+  SELF_CHECKOUT = 'SELF_CHECKOUT',
 }
